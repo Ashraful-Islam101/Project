@@ -17,6 +17,7 @@
         <button type="submit">Calculate</button>
     </form>
 
+    
     <?php
     include 'functions.php';
 
