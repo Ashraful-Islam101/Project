@@ -58,6 +58,7 @@ public function find_maxmin_iterations($results) {
 
 }
 
+
 class Printer extends Plural{
 	
 	public $results;
