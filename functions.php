@@ -98,13 +98,26 @@ class Printer extends Plural{
     $w = 1000 / count($this->results);
     $w = $w . 'px';
 
+    $countt=0;
+
     foreach ($this->results as $result) {
+        $countt +=1;
         $num = $result['number'];
         $count = $result['iterations'];
         $h = ($count / $it) * 100;
         $h = $h . '%';
+
+        $color='';
+        if($countt==1){
+            $color='red';
+        }elseif($countt==2){
+            $color='blue';
+        }else{
+            $color='orange';
+            $countt=0;
+        }
     
-        echo "<div class='bar' style='background-color: blue; height: $w; width:$h ; ' onmouseover='showinfo(this)' onmouseout='hideinfo(this)'>
+        echo "<div class='bar' style='background-color: $color; height: $w; width:$h ; ' onmouseover='showinfo(this)' onmouseout='hideinfo(this)'>
         <div class='textinfo' style='display: none; transform: translateX(+500px);text-align: center; position: absolute;'>
             Number: $num<br> Iteration: $count
         </div>
